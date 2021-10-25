@@ -7,9 +7,9 @@ project(
     LANGUAGES C
 )
 
-include(${PROJECT_SOURCE_DIR}/cmake/riscv.cmake)
+#include(${PROJECT_SOURCE_DIR}/cmake/riscv.cmake)
 
-set(SOURCES
+set(CMSIS_SOURCES
     src/BasicMathFunctions/riscv_abs_f32.c 
     src/BasicMathFunctions/riscv_abs_q15.c
     src/BasicMathFunctions/riscv_abs_q31.c 
@@ -286,7 +286,7 @@ set(HEADERS
     )
 
 include_directories(inc/)
-add_library(CMSIS_lib STATIC  ${SOURCES} ${HEADERS})
+add_library(CMSIS_lib STATIC  ${CMSIS_SOURCES} ${HEADERS})
 
 #add_library(cmsis_dsp_lib STATIC ${SOURCES})
 #target_include_directories(cmsis_dsp_lib PUBLIC ../inc)
