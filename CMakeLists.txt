@@ -7,7 +7,7 @@ project(
     LANGUAGES C
 )
 
-include(cmake/riscv.cmake)
+include(${PROJECT_SOURCE_DIR}/cmake/riscv.cmake)
 
 set(SOURCES
     src/BasicMathFunctions/riscv_abs_f32.c 
