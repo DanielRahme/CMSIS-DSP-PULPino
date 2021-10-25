@@ -213,7 +213,7 @@ extern "C"
 {
 #endif
 /*To use DSP extension*/
-#define USE_DSP_RISCV 
+//#define USE_DSP_RISCV 
 
 
 /*
