@@ -7,6 +7,8 @@ project(
     LANGUAGES C
 )
 
+include(cmake/riscv.cmake)
+
 set(SOURCES
     src/BasicMathFunctions/riscv_abs_f32.c 
     src/BasicMathFunctions/riscv_abs_q15.c
