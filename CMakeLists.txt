@@ -146,7 +146,7 @@ set(CMSIS_SOURCES
     src/FilteringFunctions/riscv_biquad_cascade_df1_32x64_init_q31.c
     src/FilteringFunctions/riscv_biquad_cascade_df1_32x64_q31.c
     src/FilteringFunctions/riscv_biquad_cascade_df1_f32.c
-    src/FilteringFunctions/riscv_biquad_cascade_df1_fast_q15.c
+    #src/FilteringFunctions/riscv_biquad_cascade_df1_fast_q15.c
     src/FilteringFunctions/riscv_biquad_cascade_df1_fast_q31.c
     src/FilteringFunctions/riscv_biquad_cascade_df1_init_f32.c
     src/FilteringFunctions/riscv_biquad_cascade_df1_init_q15.c
@@ -160,17 +160,17 @@ set(CMSIS_SOURCES
     src/FilteringFunctions/riscv_biquad_cascade_stereo_df2T_f32.c
     src/FilteringFunctions/riscv_biquad_cascade_stereo_df2T_init_f32.c
     src/FilteringFunctions/riscv_conv_f32.c
-    src/FilteringFunctions/riscv_conv_fast_opt_q15.c
-    src/FilteringFunctions/riscv_conv_fast_q15.c
+    #src/FilteringFunctions/riscv_conv_fast_opt_q15.c
+    #src/FilteringFunctions/riscv_conv_fast_q15.c
     src/FilteringFunctions/riscv_conv_fast_q31.c
-    src/FilteringFunctions/riscv_conv_opt_q7.c
-    src/FilteringFunctions/riscv_conv_opt_q15.c
+    #src/FilteringFunctions/riscv_conv_opt_q7.c
+    #src/FilteringFunctions/riscv_conv_opt_q15.c
     src/FilteringFunctions/riscv_conv_partial_f32.c
-    src/FilteringFunctions/riscv_conv_partial_fast_opt_q15.c	
-    src/FilteringFunctions/riscv_conv_partial_fast_q15.c
+    #src/FilteringFunctions/riscv_conv_partial_fast_opt_q15.c	
+    #src/FilteringFunctions/riscv_conv_partial_fast_q15.c
     src/FilteringFunctions/riscv_conv_partial_fast_q31.c
-    src/FilteringFunctions/riscv_conv_partial_opt_q7.c
-    src/FilteringFunctions/riscv_conv_partial_opt_q15.c
+    #src/FilteringFunctions/riscv_conv_partial_opt_q7.c
+    #src/FilteringFunctions/riscv_conv_partial_opt_q15.c
     src/FilteringFunctions/riscv_conv_partial_q7.c
     src/FilteringFunctions/riscv_conv_partial_q15.c
     src/FilteringFunctions/riscv_conv_partial_q31.c
@@ -195,7 +195,7 @@ set(CMSIS_SOURCES
     src/FilteringFunctions/riscv_fir_decimate_q15.c
     src/FilteringFunctions/riscv_fir_decimate_q31.c
     src/FilteringFunctions/riscv_fir_f32.c
-    src/FilteringFunctions/riscv_fir_fast_q15.c
+    #src/FilteringFunctions/riscv_fir_fast_q15.c
     src/FilteringFunctions/riscv_fir_fast_q31.c
     src/FilteringFunctions/riscv_fir_init_f32.c
     src/FilteringFunctions/riscv_fir_init_q7.c
