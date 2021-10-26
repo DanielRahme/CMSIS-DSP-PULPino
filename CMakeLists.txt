@@ -1,3 +1,9 @@
+## File: CMakeLists.txt
+## Author: Daniel Rahme
+## Date 2021-10-26
+## Description: Top level CMakeLists.txt file for builidn the CMSIS-DSP
+##              library from ARM ported to RISCV.
+
 cmake_minimum_required(VERSION 3.20)
 
 project(
@@ -6,8 +12,6 @@ project(
     DESCRIPTION "RISCV CMSIS DSP library ported from ARM"
     LANGUAGES C
 )
-
-#include(${PROJECT_SOURCE_DIR}/cmake/riscv.cmake)
 
 set(CMSIS_SOURCES
     src/BasicMathFunctions/riscv_abs_f32.c 
@@ -279,33 +283,28 @@ set(CMSIS_SOURCES
     src/ControllerFunctions/riscv_sin_cos_q31.c
     )
 
-set(HEADERS
-    inc/riscv_math.h
-    inc/riscv_common_tables.h
-    inc/riscv_const_structs.h
+
+add_library(riscv_cmsis_dsp_lib STATIC ${CMSIS_SOURCES})
+target_include_directories(riscv_cmsis_dsp_lib PUBLIC ./include)
+target_compile_features(riscv_cmsis_dsp_lib PUBLIC c_std_99)
+target_compile_options(riscv_cmsis_dsp_lib PRIVATE 
+    #Warnings
+    -Wall
+    -Wextra
+    -Wshadow
+    -Wdouble-promotion
+    -Wconversion
+    -fno-common
+
+    #Debug
+    -ffunction-sections
+    -fdata-sections
+
+    #Memory
+    -fstack-usage
+
+    #Compile and linker
+    -nostdlib
+    -ffreestanding
+    -fno-builtin
     )
-
-include_directories(inc/)
-add_library(CMSIS_lib STATIC  ${CMSIS_SOURCES} ${HEADERS})
-
-#add_library(cmsis_dsp_lib STATIC ${SOURCES})
-#target_include_directories(cmsis_dsp_lib PUBLIC ../inc)
-##target_link_libraries(cmsis_dsp_lib PRIVATE m)
-#target_compile_features(cmsis_dsp_lib PRIVATE c_std_99)
-#target_compile_options(cmsis_dsp_lib PRIVATE 
-#    #Warnings
-#    -Wall
-#    -Wextra
-#    -Wshadow
-#    -Wdouble-promotion
-#    -Wconversion
-#    -fno-common
-#    #Debug
-#    -ffunction-sections
-#    -fdata-sections
-#    #Memory
-#    -fstack-usage
-#    #Compile and linker
-#    -nostdlib
-#    -ffreestanding
-#    )
