@@ -48,7 +48,7 @@
  * \image html MatrixTranspose.gif "Transpose of a 3 x 3 matrix"    
  */
 
-#include "riscv_math.h"
+#include <riscv_dsp/riscv_math.h>
 
 /**    
  * @ingroup groupMatrix    

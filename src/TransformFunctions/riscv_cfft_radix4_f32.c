@@ -41,7 +41,7 @@
  Modifications 2017  Mostafa Saleh       (Ported to RISC-V PULPino)   
 * -------------------------------------------------------------------- */
 
-#include "riscv_math.h"
+#include <riscv_dsp/riscv_math.h>
 
 extern void riscv_bitreversal_f32(
 float32_t * pSrc,

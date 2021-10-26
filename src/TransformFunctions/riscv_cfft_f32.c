@@ -40,8 +40,8 @@
  Modifications 2017  Mostafa Saleh       (Ported to RISC-V PULPino)
 * -------------------------------------------------------------------- */
 
-#include "riscv_math.h"
-#include "riscv_common_tables.h"
+#include <riscv_dsp/riscv_math.h>
+#include <riscv_dsp/riscv_common_tables.h>
 
 extern void riscv_radix8_butterfly_f32(
     float32_t * pSrc,

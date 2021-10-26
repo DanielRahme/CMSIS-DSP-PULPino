@@ -41,7 +41,7 @@
 * ---------------------------------------------------------------------------- */
 #include <math.h>
 #include <stdio.h>
-#include "riscv_math.h"
+#include <riscv_dsp/riscv_math.h>
 
 
 /**    

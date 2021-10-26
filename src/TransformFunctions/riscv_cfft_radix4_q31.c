@@ -41,7 +41,7 @@
  Modifications 2017  Mostafa Saleh       (Ported to RISC-V PULPino)  
 * -------------------------------------------------------------------- */
 
-#include "riscv_math.h"
+#include <riscv_dsp/riscv_math.h>
 
 void riscv_radix4_butterfly_inverse_q31(
 q31_t * pSrc,

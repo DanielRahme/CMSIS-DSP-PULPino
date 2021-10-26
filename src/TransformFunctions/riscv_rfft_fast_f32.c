@@ -40,7 +40,7 @@
  Modifications 2017  Mostafa Saleh       (Ported to RISC-V PULPino)
 * -------------------------------------------------------------------- */
 
-#include "riscv_math.h"
+#include <riscv_dsp/riscv_math.h>
 
 void stage_rfft_f32(
   riscv_rfft_fast_instance_f32 * S,
