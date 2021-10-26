@@ -10,7 +10,7 @@ project(
     RiscvCmsisDsp
     VERSION 0.1
     DESCRIPTION "RISCV CMSIS DSP library ported from ARM"
-    LANGUAGES C
+    LANGUAGES C ASM
 )
 
 set(CMSIS_SOURCES
@@ -286,7 +286,7 @@ set(CMSIS_SOURCES
 
 add_library(riscv_cmsis_dsp_lib STATIC ${CMSIS_SOURCES})
 target_include_directories(riscv_cmsis_dsp_lib PUBLIC ./include)
-target_compile_features(riscv_cmsis_dsp_lib PUBLIC c_std_99)
+#target_compile_features(riscv_cmsis_dsp_lib PUBLIC c_std_99)
 target_compile_options(riscv_cmsis_dsp_lib PRIVATE 
     #Warnings
     -Wall
