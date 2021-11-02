@@ -1,5 +1,3 @@
-#include(CMakeForceCompiler)
-
 # usage
 # cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/riscv.cmake ../
 
@@ -17,7 +15,7 @@ message( "RISC-V objcopy found: ${RISCV_OBJCOPY}")
 # The Generic system name is used for embedded targets (targets without OS) in
 # CMake
 set( CMAKE_SYSTEM_NAME          Generic )
-set( CMAKE_SYSTEM_PROCESSOR     rv32imafc )
+set( CMAKE_SYSTEM_PROCESSOR     rv32imfc )
 set( CMAKE_EXECUTABLE_SUFFIX    ".elf")
 set(MABI ilp32f)
 
@@ -39,6 +37,8 @@ set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mabi=${MABI}" )
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "" )
 set( CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "" )
 set( CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "" )
+
+# -nostartfiles is commented out because Spike simulator needs it to simulate.
 #set( CMAKE_EXE_LINKER_FLAGS   "${CMAKE_EXE_LINKER_FLAGS}  -march=${CMAKE_SYSTEM_PROCESSOR}    -nostartfiles   " )
 set( CMAKE_EXE_LINKER_FLAGS   "${CMAKE_EXE_LINKER_FLAGS}  -march=${CMAKE_SYSTEM_PROCESSOR}" )
 
