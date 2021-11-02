@@ -286,17 +286,23 @@ set(CMSIS_SOURCES
 
 add_library(riscv_cmsis_dsp_lib STATIC ${CMSIS_SOURCES})
 target_include_directories(riscv_cmsis_dsp_lib PUBLIC ./include)
-#target_compile_features(riscv_cmsis_dsp_lib PUBLIC c_std_99)
-target_compile_options(riscv_cmsis_dsp_lib PRIVATE 
-    #Warnings
-    -Wall
-    -Wextra
-    -Wshadow
-    -Wdouble-promotion
-    -Wconversion
-    -fno-common
+target_compile_features(riscv_cmsis_dsp_lib PUBLIC c_std_99)
 
-    #Debug
+target_link_options(riscv_cmsis_dsp_lib PRIVATE --gc-sections)
+
+target_compile_options(riscv_cmsis_dsp_lib PRIVATE 
+    #Optimization
+    -O3
+
+    #Warnings
+    # -Wall
+    # -Wextra
+    # -Wshadow
+    # -Wdouble-promotion
+    # -Wconversion
+    # -fno-common
+
+    #Dead code elimination
     -ffunction-sections
     -fdata-sections
 
@@ -307,4 +313,5 @@ target_compile_options(riscv_cmsis_dsp_lib PRIVATE
     -nostdlib
     -ffreestanding
     -fno-builtin
+    -flto
     )
